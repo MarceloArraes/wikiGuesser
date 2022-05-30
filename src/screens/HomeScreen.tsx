@@ -10,6 +10,14 @@ const HomeScreen = ({navigation}: any ) => {
         title="Go to WIKIPAGES"
         onPress={() => navigation.navigate('Wikipages',{name: 'Home', age: 20})}
       />
+      <Button
+        title="Go to TodoList"
+        onPress={() => navigation.navigate('TodoList')}
+      />
+      <Button
+        title="Go to Checklist"
+        onPress={() => navigation.navigate('Checklist')}
+      />
       <StatusBar style="auto" />
     </View>
   )

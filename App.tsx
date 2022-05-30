@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
 import Wikipages from './src/screens/Wikipages';
+import TodoNative from './src/screens/TodoNative';
+import Checklist from './src/screens/Checklist';
 
 //This site: https://en.wikipedia.org/wiki/Special:ApiSandbox
 //action=query = revisions, pageassesments, pageviews
@@ -20,6 +22,8 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home" >{/*para todas as telas terem o mesmo titulo: screenOptions={{ title: 'Tela Inicial' }} */}
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Tela Inicial' }}/>
         <Stack.Screen name="Wikipages" component={Wikipages} initialParams={{ name: 'no Params', age:0 }}/> 
+        <Stack.Screen name="TodoList" component={TodoNative}/> 
+        <Stack.Screen name="Checklist" component={Checklist}/> 
       </Stack.Navigator>
     </NavigationContainer>
   );
