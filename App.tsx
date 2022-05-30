@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
+import Wikipages from './src/screens/Wikipages';
 
 //This site: https://en.wikipedia.org/wiki/Special:ApiSandbox
 //action=query = revisions, pageassesments, pageviews
@@ -16,9 +17,11 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Navigator initialRouteName="Home" >{/*para todas as telas terem o mesmo titulo: screenOptions={{ title: 'Tela Inicial' }} */}
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Tela Inicial' }}/>
+        <Stack.Screen name="Wikipages" component={Wikipages} initialParams={{ name: 'no Params', age:0 }}/> 
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+/* If you didn't specify any params when navigating to this screen, the initial params will be used. */
