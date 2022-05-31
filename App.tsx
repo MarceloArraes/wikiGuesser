@@ -6,6 +6,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import Wikipages from './src/screens/Wikipages';
 import TodoNative from './src/screens/TodoNative';
 import Checklist from './src/screens/Checklist';
+import {ChecklistProvider} from "./src/context/ChecklistContext";
 
 //This site: https://en.wikipedia.org/wiki/Special:ApiSandbox
 //action=query = revisions, pageassesments, pageviews
@@ -17,15 +18,22 @@ import Checklist from './src/screens/Checklist';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
   return (
+
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home" >{/*para todas as telas terem o mesmo titulo: screenOptions={{ title: 'Tela Inicial' }} */}
-        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Tela Inicial' }}/>
-        <Stack.Screen name="Wikipages" component={Wikipages} initialParams={{ name: 'no Params', age:0 }}/> 
-        <Stack.Screen name="TodoList" component={TodoNative}/> 
-        <Stack.Screen name="Checklist" component={Checklist}/> 
+
+          <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Tela Inicial' }}/>
+          <Stack.Screen name="Wikipages" component={Wikipages} initialParams={{ name: 'no Params', age:0 }}/> 
+          <Stack.Screen name="TodoList" component={TodoNative}/> 
+          <Stack.Screen name="Checklist" component={Checklist}/> 
+
       </Stack.Navigator>
+
     </NavigationContainer>
+
+
   );
 }
 /* If you didn't specify any params when navigating to this screen, the initial params will be used. */
